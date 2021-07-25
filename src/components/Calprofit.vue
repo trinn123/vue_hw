@@ -1,30 +1,26 @@
 <template>
-  <div>
+  <div class="layer">
     <div>
             <label for="list">รายละเอียด:  </label>
-            <input type="text" v-model="form.detail">
+            <input type="text" v-model="form.detail" placeholder="Detail">
     </div>
 
-    <div class="amount">
-            <label for="amount">จำนวน: </label>
-            <input type="text" v-model="form.amount">
+    <div class="income">
+            <label for="amount">จำนวนเงินรายรับ: </label>
+            <input type="text" v-model="form.income" placeholder="income">
     </div>
 
-    <div class="income"> 
-      <input type="radio" id="income" name="category" value="100" >
-      <label for="income">รายรับ</label>
-      <input type="radio" id="expenses" name="category" value="100" >
-      <label for="expenses">รายจ่าย</label>
+    <div class="expenses">
+            <label for="amount">จำนวนเงินรายจ่าย: </label>
+            <input type="text" v-model="form.expenses" placeholder="expenses">
     </div>
-    
-    
 
     <div class="date">
     <label for="date">Date: </label>
       <input type="date" id="date" name="date" v-model="form.date">
     </div>
 
-    <button @click="addRecord">Add</button><br>
+    <button @click="addUpdate">Add</button><br>
 
     
   </div>
@@ -53,18 +49,18 @@ export default {
                 date:"",
             }
         },
-        addRecord(){
-            let payload = {
-                detail: this.form.detail,
-                income: this.form.income,
-                expenses: this.from.expenses,
-                date: this.form.date
-            }
+      addUpdate() {
+      let payload = {
+        detail: this.form.detail,
+        income: this.form.income,
+        expenses: this.form.expenses,
+        date: this.form.date
+      }
 
-            console.log(payload)
-            UpdateStore.dispatch("addRecord",payload)
-            this.clearForm()
-        }
+      console.log(payload)
+      UpdateStore.dispatch("addUpdate", payload)
+      this.clearForm()    
+    }
     }
     
  
@@ -81,5 +77,21 @@ export default {
 }
 .amount {
   margin: 1%;
+}
+.layer{
+  margin-bottom: 4%;
+  margin-top: 4%;
+  margin-left: 35%;
+  background-color: darksalmon;
+  height: 150px;
+  width: 25%;
+  padding: 2%;
+
+  border: 2.5px solid black;
+}
+button{
+  background-color: #008CBA;
+  font-size: 20px;
+  padding: 10px 24px;
 }
 </style>

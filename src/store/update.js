@@ -30,10 +30,10 @@ export default new Vuex.Store({
                     date:"2021-07-20"
                   },
                   {
-                        detail: "ซื้อข้าว",
-                        income:"",
-                        expenses:40,
-                        date: "2021-07-21"
+                    detail: "ซื้อข้าว",
+                    income:"",
+                    expenses:40,
+                    date: "2021-07-21"
                   
                   }
               ]

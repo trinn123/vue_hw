@@ -18,6 +18,12 @@
                 </tr>
         </tbody>
         </table>
+
+    <div class="summary">
+            <h4>รายรับ: {{ sumIn() }} || รายจ่าย: {{ sumEx() }}</h4> 
+            <h4>คงเหลือ: {{ sumIn() - sumEx() }}</h4>
+    </div>
+
     </div>
 </template>
 
@@ -40,6 +46,27 @@ export default {
             
             this.updates = UpdateStore.getters.updates
         },
+        sumIn() {
+            let result = 0
+            for(let i=0; i<this.updates.length; i++){
+                
+                if(this.updates[i].income != ""){
+                    result += parseInt(this.updates[i].income)
+                }
+            
+            }
+            return result
+        },
+        sumEx() {
+            let result = 0
+            for(let i=0;i<this.updates.length;i++){
+                
+                if(this.updates[i].expenses != ""){
+                    result += parseInt(this.updates[i].expenses)
+                }
+            }
+            return result
+        }
     }
 }
 </script>
@@ -57,6 +84,14 @@ export default {
     thead{
         background-color: cadetblue;
     }
-
+    
+    .summary{
+        margin-top: 4%;
+        margin-left: 41%;
+        background-color: darksalmon;
+        width: 20%;
+        border: 2.5px solid black;
+        
+    }
 
 </style>

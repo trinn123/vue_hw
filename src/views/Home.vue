@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>รายรับ รายจ่าย</h1>
+    <h1>income-expenses</h1>
     <calprofit></calprofit>
     <profit-table></profit-table>
   </div>
@@ -22,7 +22,7 @@ export default {
 
 h1{
   font-size: 36pt;
-  font-family: Arial;
+  font-family: 'Arail';
 }
 
 </style>
