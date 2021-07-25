@@ -1,19 +1,11 @@
 # vuejs_assignments
 
-## Project setup
-```
-npm install
-```
+วิธี run 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. เปิด terminal CD ไปที่ folder ที่ clone มา
 
-### Compiles and minifies for production
-```
-npm run build
-```
+2. ใส่ npm install ใน terminl 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+3. ใส่ npm run serve 
+
+4. นำ ip ที่ได้จากการคำสั่งเมื่อกี้ไปใส่ใน browser
